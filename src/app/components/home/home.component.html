@@ -1,0 +1,14 @@
+<p>{{data.title}}</p>
+<p>{{data.paragraph}}</p>
+
+
+<div>Some tags before</div>
+<owl-carousel-o [options]="customOptions">
+<ng-template carouselSlide *ngFor="let img of data.gallery">
+    <img [src]="img" >
+</ng-template>  
+
+</owl-carousel-o>
+<div>Some tags after</div>
+
+

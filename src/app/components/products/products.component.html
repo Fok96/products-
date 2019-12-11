@@ -1,0 +1,62 @@
+<div class="container">
+
+
+
+        <div class="row">
+                
+                <div class="col-2 offset-6">
+                                <div class="input-group mb-3">
+                                                <div class="input-group-prepend">
+                                                  <span class="input-group-text" id="basic-addon1">Search:</span>
+                                                </div>
+                <div class="col-6">
+                                                <input type="text" [(ngModel)]="search" class="form-control mb-4"  >
+                                              </div>
+                                </div>
+                </div>
+
+        <div class="row">
+            <div class="col-2">
+                    <table class="table">
+                        <thead>
+                              <tr>
+                                <th scope="col">id</th>
+                                <th scope="col">Title</th>
+                                <th scope="col">DueDate</th>
+                                <th scope="col" >Completed</th>
+                              </tr>
+                        </thead>
+                    <tbody>
+                                
+                            <tr *ngFor="let k of data.products | filterBy:{title: search}">
+                              <th scope="row">{{p.title}}</th>
+                              <td><img [src]="p.photo" class="img-fluid" /></td>
+                              <td>{{p.price}}€</td>
+                              
+                            </tr>
+                            
+                          </tbody>
+                    </table>
+            </div>
+        </div>
+                
+        
+                </div>
+    <div class="row">
+        <div class="col-12">
+            <h1 class="text-center">
+                {{data.title}}
+            </h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-3" *ngFor="let p of data.products">
+            <a [routerLink]="'/products/'+p._id" >
+                <img [src]="p.photo" class="img-fluid" />
+                {{p.title}}
+                {{p.price}}€
+            </a>
+        </div>
+    </div>
+
+</div>

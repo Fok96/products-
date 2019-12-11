@@ -1,0 +1,22 @@
+<p>{{data.title}}</p>
+<p>{{data.phone}}</p>
+<p>{{data.email}}</p>
+<p>{{data.paragraph}}</p>
+
+
+
+<agm-map  [latitude]="center.lat" [longitude]="center.lng" [zoom]="mapZoom">
+
+    <agm-marker *ngFor="let dep of data.departments" [latitude]="dep.coordinates.lat" [longitude]="dep.coordinates.lng">
+
+
+
+
+        <agm-info-window>
+            {{dep.title}}
+        </agm-info-window>
+
+
+    </agm-marker>
+
+</agm-map>
