@@ -8,6 +8,8 @@ import {HttpClient} from "@angular/common/http";
 })
 export class ProductsComponent implements OnInit {
 
+
+  public search="";
   public data= {};
   constructor(
     private http: HttpClient

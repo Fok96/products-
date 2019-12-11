@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core'
+import { FormsModule } from '@angular/forms'
 
 
 import { AppComponent } from './app.component';
@@ -16,7 +17,10 @@ import {AgmCoreModule} from "@agm/core";
 import { ProductComponent } from './components/product/product.component';
 import {CarouselModule} from 'ngx-owl-carousel-o';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import { SearchPipe } from './search.pipe';
+import { FilterPipeModule } from 'ngx-filter-pipe';
+import { BoxComponent } from './components/box/box.component';
+import { BoxesComponent } from './components/boxes/boxes.component';
+
 
 const routes=[
   {
@@ -38,6 +42,9 @@ const routes=[
   {
     path:"products/:productId",
     component:ProductComponent
+  },{
+    path:"boxes",
+    component:BoxesComponent
   }
 
 
@@ -54,7 +61,8 @@ const routes=[
     ProductsComponent,
     ContactComponent,
     ProductComponent,
-    SearchPipe
+    BoxComponent,
+    BoxesComponent
   ],
   imports: [
     BrowserModule,
@@ -65,7 +73,11 @@ const routes=[
       apiKey:""
     }),
     CarouselModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    FormsModule,
+    FilterPipeModule,
+    
+
   ],
   providers: [],
   bootstrap: [AppComponent]

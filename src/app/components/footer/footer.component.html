@@ -1,1 +1,19 @@
-<div class="fixed-bottom bg-dark text-white text-center p-1">ShoeShop</div>
+<div class="fixed-bottom bg-dark text-white text-center p-1">{{ss.num}}
+    <button class="btn btn-light" (click)="ss.increaseNumber()">+
+        
+    </button>
+
+
+    <button class="btn btn-light" (click)="ss.decreaseNumber()">-
+        
+    </button>
+
+
+    <div class="input-group mb-6">
+            
+            <div class="col-6">
+                <input type="color" [(ngModel)]="ss.string1" >
+            </div>
+    </div>
+</div>
+
